@@ -1,0 +1,20 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.acn.training.project1.controller.View1">
+    <Page id="page" title="{i18n>title}">
+    <content>
+        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0">
+            <sap.ui.layout.form:content>
+                <sap.ui.core:Title text="Title" id="title0"/>
+                
+                <Label text="Label 1" id="label0"/>
+                
+                <Input width="100%" id="input0"/>
+                
+                <Label text="Label 2" id="label1"/>
+                <Input xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" width="70%" id="input1_copy"/>
+                <Input width="30%" id="input1"/>
+
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+    </content>
+    </Page>
+</mvc:View>
