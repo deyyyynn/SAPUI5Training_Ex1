@@ -1,20 +1,53 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.acn.training.project1.controller.View1">
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+	xmlns:l="sap.ui.layout"
+    xmlns:sap.ui.layout.form="sap.ui.layout.form" 
+    xmlns:sap.ui.core="sap.ui.core" 
+    controllerName="com.acn.training.project1.controller.View1">
     <Page id="page" title="{i18n>title}">
     <content>
-        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0">
+	<VBox class="sapUiSmallMargin">
+        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0" emptySpanL="4" emptySpanXL="0" labelSpanXL="4" labelSpanL="3" labelSpanM="4" columnsL="1">
             <sap.ui.layout.form:content>
                 <sap.ui.core:Title text="Title" id="title0"/>
+                <Label text="Name" id="l_name"/>
                 
-                <Label text="Label 1" id="label0"/>
+                <Input width="100%" id="i_name"/>
                 
-                <Input width="100%" id="input0"/>
+                <Label text="Street/No" id="l_strno"/>
+                <Input id="i_street"/>
+                <Input id="i_houseno">
+                <layoutData>
+						<l:GridData span="XL2 L1 M3 S4" />
+                </layoutData>
+                </Input>
                 
-                <Label text="Label 2" id="label1"/>
-                <Input xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" width="70%" id="input1_copy"/>
-                <Input width="30%" id="input1"/>
+                <Label text="ZIP Code/City" />
+                <Input width="100%" id="i_zipcode">
+                <layoutData>
+						<l:GridData span="XL2 L1 M3 S4" />
+                </layoutData>
+				</Input>
+                <Input width="100%" id="i_city"/>
+                <Label text="Country"/>
+                <Select id="box_country" selectedKey="{Country}">
+					<items>
+						<sap.ui.core:Item text=" "/>
+						<sap.ui.core:Item text="England" key="England"/>
+						<sap.ui.core:Item text="Germany" key="Germany"/>
+						<sap.ui.core:Item text="USA" key="USA"/>
+						<sap.ui.core:Item text="Philippines" key="Philippines"/>
+					</items>
+				</Select>
 
             </sap.ui.layout.form:content>
         </sap.ui.layout.form:SimpleForm>
+ <HBox justifyContent="End" class="sapUiSmallMarginTop">
+      <Button text="Save"  type="Accept" press="onSave"/>
+      <Button text="Clear" type="Reject" press="onClear" class="sapUiTinyMarginBegin"/>
+    </HBox>
+    </VBox>
     </content>
     </Page>
 </mvc:View>
